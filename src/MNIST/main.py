@@ -3,6 +3,8 @@ import torchvision
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 from utils import singleton
+import module
+import torch.optim as optim
 
 n_epochs = 3
 batch_size_train = 64
@@ -63,3 +65,6 @@ def show_data():
         plt.show()
 
 show_data()
+network = module.CNN()
+optimizer = optim.SGD(network.parameters(), lr=learning_rate,
+                      momentum=momentum)
